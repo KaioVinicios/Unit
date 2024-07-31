@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário de Reserva de Hotel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Formulário de Reserva de Hotel</h2>
+  <form action="submit_form.php" method="post">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="sexo">Sexo:</label>
+      <select id="sexo" name="sexo" required>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="data-chegada">Data de Chegada:</label>
+      <input type="date" id="data-chegada" name="data-chegada" required>
+    </div>
+    <div class="form-group">
+      <label for="num-noites">Número de Noites:</label>
+      <input type="number" id="num-noites" name="num-noites" required>
+    </div>
+    <div class="form-group">
+      <label for="num-hospedes">Número de Hóspedes:</label>
+      <input type="number" id="num-hospedes" name="num-hospedes" required>
+    </div>
+    <div class="form-group">
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem"></textarea>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+</body>
+</html>

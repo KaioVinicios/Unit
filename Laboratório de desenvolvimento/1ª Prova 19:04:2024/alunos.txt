@@ -1,0 +1,7 @@
+1ª Prova Laboratório de Programação -> 19/04/2024
+
+Kaio Vinícios Da Silva Gois & William Batista Andrade Santana
+
+1ª- A
+2ª- E
+3ª- Por ser necessário o uso de chaves e valores. Pode ser utilizado um conjunto de Dicionários e uma Lista geral.
