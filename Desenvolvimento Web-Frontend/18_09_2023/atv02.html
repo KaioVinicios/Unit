@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de senha</title>
+</head>
+<body>
+    <h2>Validador de senha</h2>
+
+    <form action="">
+        <label for="senha">Digite a senha:</label>
+        <input type="password" id="senha" name="senha">
+
+        <button type="button" onclick="compararValores()">Entrar</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function compararValores() {
+                var senha = document.getElementById("senha").value;
+                var resultado = document.getElementById("resultado");
+
+                if (senha === "010203") {
+                    resultado.textContent = "Acesso permitido.";
+                } else {
+                    resultado.textContent = "Acesso negado.";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

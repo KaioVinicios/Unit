@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ímpar ou par</title>
+</head>
+<body>
+    <h2>Ímpar ou par</h2>
+
+    <form action="">
+        <label for="valor1">Digite o valor:</label>
+        <input type="number" id="valor1" name="valor1">
+
+        <button type="button" onclick="compararValores()">Comparar</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function compararValores() {
+                var valor1 = parseFloat(document.getElementById("valor1").value);
+                var resultado = document.getElementById("resultado");
+
+                if (valor1 % 2 === 0) {
+                    resultado.textContent = "O valor é par.";
+                } else {
+                    resultado.textContent = "O valor é ímpar.";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

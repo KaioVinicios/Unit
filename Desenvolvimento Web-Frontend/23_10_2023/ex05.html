@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Alterar a cor de um botão</title>
+</head>
+<body>
+  <button id="botao">Clicar aqui</button>
+
+  <script>
+    let cor = "red";
+    document.getElementById("botao").addEventListener("click", function() {
+      cor = (cor == "red") ? "green" : "red";
+      document.getElementById("botao").style.backgroundColor = cor;
+    });
+  </script>
+</body>
+</html>

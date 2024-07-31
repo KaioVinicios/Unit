@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de notas</title>
+</head>
+<body>
+    <h2>Validador de notas</h2>
+
+    <form action="">
+        <label for="nota1">Digite a primeira nota:</label>
+        <input type="number" id="nota1" name="nota1">
+
+        <label for="nota2">Digite a segunda nota:</label>
+        <input type="number" id="nota2" name="nota2">
+
+        <button type="button" onclick="compararValores()">Aprovado ?</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function compararValores() {
+                var nota1 = parseFloat(document.getElementById("nota1").value);
+                var nota2 = parseFloat(document.getElementById("nota2").value);
+                var media = (nota1 + nota2) / 2 
+                var resultado = document.getElementById("resultado");
+
+                if (media >= 6) {
+                    resultado.textContent = "Aprovado!";
+                } else {
+                    resultado.textContent = "Reprovado";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

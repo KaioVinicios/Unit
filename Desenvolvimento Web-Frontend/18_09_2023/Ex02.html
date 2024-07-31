@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de valores</title>
+</head>
+<body>
+    <h2>Comparação de valores</h2>
+
+    <form action="">
+        <label for="valor1">Digite o primeiro valor:</label>
+        <input type="number" id="valor1" name="valor1">
+
+        <label for="valor2">Digite o segundo valor:</label>
+        <input type="number" id="valor2" name="valor2">
+
+        <button type="button" onclick="compararValores()">Comparar</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function compararValores() {
+                var valor1 = parseFloat(document.getElementById("valor1").value);
+                var valor2 = parseFloat(document.getElementById("valor2").value);
+                var resultado = document.getElementById("resultado");
+
+                if (isNaN(valor1) || isNaN(valor2)) {
+                    resultado.textContent = "Por favor, digite valores numéricos válidos.";
+                } else if (valor1 === valor2) {
+                    resultado.textContent = "Os valores são iguais.";
+                } else if (valor1 > valor2) {
+                    resultado.textContent = "O primeiro valor é maior.";
+                } else {
+                    resultado.textContent = "O segundo valor é maior.";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    <h2>Aposentadoria</h2>
+
+    <form action="">
+        <label for="idade">Digite a idade:</label>
+        <input type="number" id="idade" name="idade">
+
+        <button type="button" onclick="compararValores()">Verificar</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function compararValores() {
+                var idade = parseInt(document.getElementById("idade").value);
+                var resultado = document.getElementById("resultado");
+
+                if (idade >= 65) {
+                    resultado.textContent = "Já pode se aposentar.";
+                } else {
+                    resultado.textContent = "Ainda não pode se aposentar, TRABALHE!";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

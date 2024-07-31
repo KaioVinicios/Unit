@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 style="background-color: yellow;"><strong>Sistema de gestão acadêmica</strong></h3>
+    <p><strong>Manutenção de usuários do sistema interno</strong></p>
+    <form action="informations.php">
+        <label for="">Login <input type="text" name="username"></label><br>
+        <label for="">Senha <input type="password" name="Key" id="password"></label><br>
+        <label for="">Status:</label>
+        <select name="status" id="">
+            <option value="inativo">inativo</option>
+            <option value="ativo">ativo</option>
+        </select>
+        <br>
+        <label for="">Tipo</label>
+        <input type="radio" name="type" id="Técnico">
+        <label for="Técnico">Técnico</label>
+        <input type="radio" name="type" id="Aluno">
+        <label for="Aluno">Aluno</label>
+        <input type="radio" name="type" id="Professor">
+        <label for="Professor">Professor</label><br>
+        <label for="">Data criação <input type="date"></label><br>
+        <label for="">Perfil</label>
+        <input type="radio" name="type" id="Convidado">
+        <label for="Convidado">Convidado</label>
+        <input type="radio" name="type" id="Adm">
+        <label for="Adm">Administrador</label><br><br>
+        <label for="obs">Observações:</label>
+        <textarea name="obs" id="obs" cols="30" rows="10"></textarea><br><br>
+
+        <label for="">Módulos</label><br>
+        <input type="checkbox" id="Compras">
+        <label for="Compras">Compras</label>
+        <input type="checkbox" id="Biblioteca">
+        <label for="Biblioteca">Biblioteca</label>
+        <input type="checkbox" id="Acadêmico">
+        <label for="Acadêmico">Acadêmico</label>
+        <br>
+        <input type="checkbox" id="Documentação">
+        <label for="Documentação">Documentação</label>
+        <input type="checkbox" id="RH">
+        <label for="RH">Recursos Humanos</label><br>
+        <input type="button" value="Cadastrar">
+        <input type="submit" value="Excluir">
+        
+    </form>
+</body>
+</html>

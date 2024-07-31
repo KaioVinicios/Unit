@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bissexto</title>
+</head>
+<body>
+    <h2>Bissexto</h2>
+
+    <form action="">
+        <label for="ano">Digite o ano:</label>
+        <input type="number" id="ano" name="ano">
+
+        <button type="button" onclick="compararValores()">Bissexto ?</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function compararValores() {
+                var ano = parseInt(document.getElementById("ano").value);
+                var resultado = document.getElementById("resultado");
+
+                if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
+                    resultado.textContent = "O ano é bissexto.";
+                } else {
+                    resultado.textContent = "O ano não é bissexto.";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>
