@@ -7,9 +7,9 @@ def derivada(t):
     return 9*(6.2318*math.e**-t * math.cos(6.2318*t) - math.e**-t * math.sin(6.2318*t))
 
 def bisseccao(xa, xb, precisao):
-    # if not(funcao(xa) * funcao(xb) < 0):  # OK
-    #     xa = float(input('Digite um novo valor para Xa: '))
-    #     xb = float(input('Digite um novo valor para Xb: '))
+    if not(funcao(xa) * funcao(xb) < 0):  # OK
+        xa = float(input('Digite um novo valor para Xa: '))
+        xb = float(input('Digite um novo valor para Xb: '))
     
     xm = (xa + xb) / 2    
     while abs(funcao(xm)) > precisao:
@@ -29,5 +29,5 @@ def newton(x, precisao):
         x = x_novo  
     print(f'Raiz encontrada: {x}')
 
-bisseccao(xa=0.01, xb=0.7, precisao=0.00001)
-newton(0.01, 0.00001)
+bisseccao(xa=0.1, xb=0.8, precisao=0.00001)
+newton(0.3, 0.00001)
