@@ -18,7 +18,7 @@ def is_diagonally_dominant(A):
             return False
     return True
 
-def gauss_seidel_or_jacobi(A, b, x0=None, tol=1e-10, max_iter=1000, seidel=True):
+def gauss_seidel_or_jacobi(A, b, x0=None, tol=1e-10, max_iter=10000, seidel=True):
     """
     Resolve um sistema de equações lineares utilizando os métodos de Gauss-Jacobi ou Gauss-Seidel.
 
@@ -76,3 +76,62 @@ def gauss_seidel_or_jacobi(A, b, x0=None, tol=1e-10, max_iter=1000, seidel=True)
 #         print("Solução:", sol_seidel)
 #     except ValueError as e:
 #         print(e)
+
+
+def trapezoidal_rule(f, a, b, n):
+    """
+    Calcula a integral de uma função usando o método do trapézio.
+    
+    Parâmetros:
+    - f: Função a ser integrada.
+    - a: Limite inferior da integração.
+    - b: Limite superior da integração.
+    - n: Número de subdivisões (deve ser um número inteiro positivo).
+    
+    Retorno:
+    - Aproximação numérica da integral de f entre a e b.
+    """
+    h = (b - a) / n
+    integral = 0.5 * (f(a) + f(b))
+    for i in range(1, n):
+        x_i = a + i * h
+        integral += f(x_i)
+    return integral * h
+
+def simpsons_rule(f, a, b, n):
+    """
+    Calcula a integral de uma função usando o método de Simpson.
+    
+    Parâmetros:
+    - f: Função a ser integrada.
+    - a: Limite inferior da integração.
+    - b: Limite superior da integração.
+    - n: Número de subdivisões (deve ser par).
+    
+    Retorno:
+    - Aproximação numérica da integral de f entre a e b.
+    """
+    if n % 2 != 0:
+        raise ValueError("O número de subdivisões (n) deve ser par para o método de Simpson.")
+    
+    h = (b - a) / n
+    integral = f(a) + f(b)
+    
+    # Soma dos termos com coeficiente 4 (índices ímpares)
+    for i in range(1, n, 2):
+        x_i = a + i * h
+        integral += 4 * f(x_i)
+    
+    # Soma dos termos com coeficiente 2 (índices pares)
+    for i in range(2, n, 2):
+        x_i = a + i * h
+        integral += 2 * f(x_i)
+    
+    return (h / 3) * integral
+
+
+A = np.array([[12, 3, -6], [3, 8, 10], [7, -15, 4]], dtype=float)
+b = np.array([16, 7, 25], dtype=float)
+x0 = np.zeros_like(b)
+
+print(gauss_seidel_or_jacobi(A, b, x0=x0, seidel=True))
